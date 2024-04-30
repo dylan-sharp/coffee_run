@@ -55,20 +55,26 @@ class FirestoreService {
     }
     user = UserProfile.fromJson(user.data()!);
 
-    await _instance.collection('users').doc(userId).update({
+    final batch = _instance.batch();
+
+    batch.update(_instance.collection('users').doc(userId), {
       'groupIds': FieldValue.arrayUnion([groupId])
     });
 
-    await _instance
+    batch.update(_instance
         .collection('coffeeGroups')
-        .doc(groupId)
-        .update({'members.$userId': CoffeeGroupMember(user.name).toJson()});
+        .doc(groupId), {'members.$userId': CoffeeGroupMember(user.name).toJson()});
+
+    await batch.commit();
+
   }
 
   /// Save an order for a specific group.
   Future<void> saveOrder(String groupId, OrderRun order) async {
+    final batch = _instance.batch();
+
     // Add order
-    await _instance.collection('coffeeGroups').doc(groupId).update({
+    batch.update(_instance.collection('coffeeGroups').doc(groupId), {
       'orderRuns': FieldValue.arrayUnion([order.toJson()])
     });
 
@@ -83,9 +89,10 @@ class FirestoreService {
     memberUpdates['members.${order.payerId}.debt'] =
         FieldValue.increment(-order.totalCost);
 
-    await _instance
+    batch.update(_instance
         .collection('coffeeGroups')
-        .doc(groupId)
-        .update(memberUpdates);
+        .doc(groupId), memberUpdates);
+
+    await batch.commit();
   }
 }
