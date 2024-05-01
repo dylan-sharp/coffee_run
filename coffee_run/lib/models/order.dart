@@ -6,7 +6,7 @@ part 'order.g.dart';
 @JsonSerializable()
 class OrderRun {
   OrderRun(this.payerId, this.orderTime, this.items, {String? id})
-      : id = id ?? const Uuid().toString();
+      : id = id ?? const Uuid().v4();
 
   String id;
   String payerId;
@@ -23,7 +23,7 @@ class OrderRun {
 @JsonSerializable()
 class OrderItem {
   OrderItem(this.name, this.cost, this.memberId, {String? id})
-      : id = id ?? const Uuid().toString();
+      : id = id ?? const Uuid().v4();
 
   String id;
   String name;

@@ -9,7 +9,7 @@ part 'coffee_group.g.dart';
 @JsonSerializable()
 class CoffeeGroup {
   CoffeeGroup(this.name, this.members, {this.orderRuns = const [], String? id})
-      : id = id ?? const Uuid().toString();
+      : id = id ?? const Uuid().v4();
 
   String id;
   String name;
