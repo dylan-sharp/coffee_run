@@ -20,7 +20,7 @@ For **best** experience use this application on a **mobile device.**
 
 Work in progress features:
 
-- Itegrating a ML model for parsing receipts into structured data to improve UX during order entry.
+- Itegrating a ML model for parsing receipts into structured data to improve UX during order entry. See (`python/receipt_model.ipynb`)
 
 ## Assumptions
 
@@ -99,7 +99,7 @@ I chose to build this project in Flutter because of the underlying assumption th
 In no specific order.
 
 - Edit & delete past orders
-- Receipt
+- Receipt parsing into structured output to improve order entry.
 - Ordering Feature Set - Allow members to submit orders to the individual paying and/or integrate DoorDash and other delivery options.
 - Improve Security
   - Lockdown firestore security rules
