@@ -1,0 +1,46 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "coffee-run-31876",
+          "appId": "1:158119289798:android:8608a89837a7cce34588c7",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "ios": {
+        "default": {
+          "projectId": "coffee-run-31876",
+          "appId": "1:158119289798:ios:562b921dc75e92014588c7",
+          "uploadDebugSymbols": false,
+          "fileOutput": "ios/Runner/GoogleService-Info.plist"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "coffee-run-31876",
+          "configurations": {
+            "android": "1:158119289798:android:8608a89837a7cce34588c7",
+            "ios": "1:158119289798:ios:562b921dc75e92014588c7",
+            "web": "1:158119289798:web:7184819f87f2cf9c4588c7"
+          }
+        }
+      }
+    }
+  },
+  "emulators": {
+    "auth": {
+      "port": 9099
+    },
+    "functions": {
+      "port": 5001
+    },
+    "firestore": {
+      "port": 8080
+    },
+    "ui": {
+      "enabled": true
+    },
+    "singleProjectMode": true
+  }
+}
