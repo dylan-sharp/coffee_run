@@ -2,6 +2,8 @@ import 'package:coffee_run/models/coffee_group.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
+  const avatarId = 'avatarId';
+
   group('CoffeeGroup tests', () {
     test('toJson() should return a valid JSON map', () {
       final coffeeGroup = CoffeeGroup('Test Group', {});
@@ -31,9 +33,9 @@ void main() {
 
     test('determineNextPayerId() should return correct member ID', () {
       final members = {
-        'member1': CoffeeGroupMember('Member 1', 10.0),
-        'member2': CoffeeGroupMember('Member 2', 20.0),
-        'member3': CoffeeGroupMember('Member 3', 5.0),
+        'member1': CoffeeGroupMember('Member 1', avatarId, 10.0),
+        'member2': CoffeeGroupMember('Member 2', avatarId, 20.0),
+        'member3': CoffeeGroupMember('Member 3', avatarId, 5.0),
       };
       final coffeeGroup = CoffeeGroup('Test Group', members);
       final nextPayerId = coffeeGroup.determineNextPayerId();
@@ -43,8 +45,9 @@ void main() {
   });
 
   group('CoffeeGroupMember tests', () {
+
     test('toJson() should return a valid JSON map', () {
-      final member = CoffeeGroupMember('Test Member', 10.0, 2);
+      final member = CoffeeGroupMember('Test Member', avatarId, 10.0, 2);
       final jsonMap = member.toJson();
 
       expect(jsonMap, isMap);
@@ -58,6 +61,7 @@ void main() {
         'name': 'Test Member',
         'debt': 10.0,
         'drinks': 2,
+        'avatarId': 'avatarId'
       };
       final member = CoffeeGroupMember.fromJson(jsonMap);
 
@@ -67,9 +71,9 @@ void main() {
     });
 
     test('Equatable should compare objects correctly', () {
-      final member1 = CoffeeGroupMember('Test Member', 10.0, 2);
-      final member2 = CoffeeGroupMember('Test Member', 10.0, 2);
-      final member3 = CoffeeGroupMember('Test Member', 5.0, 1);
+      final member1 = CoffeeGroupMember('Test Member', avatarId, 10.0, 2);
+      final member2 = CoffeeGroupMember('Test Member', avatarId, 10.0, 2);
+      final member3 = CoffeeGroupMember('Test Member', avatarId, 5.0, 1);
 
       expect(member1, member2);
       expect(member1 == member3, false);

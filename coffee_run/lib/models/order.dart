@@ -3,9 +3,9 @@ import 'package:uuid/uuid.dart';
 
 part 'order.g.dart';
 
-@JsonSerializable()
-class OrderRun {
-  OrderRun(this.payerId, this.orderTime, this.items, {String? id})
+@JsonSerializable(explicitToJson: true)
+class CoffeeOrder {
+  CoffeeOrder(this.payerId, this.orderTime, this.items, {String? id})
       : id = id ?? const Uuid().v4();
 
   String id;
@@ -13,11 +13,11 @@ class OrderRun {
   DateTime orderTime;
   List<OrderItem> items;
 
-  factory OrderRun.fromJson(Map<String, dynamic> json) => _$OrderRunFromJson(json);
-  Map<String, dynamic> toJson() => _$OrderRunToJson(this);
+  factory CoffeeOrder.fromJson(Map<String, dynamic> json) => _$CoffeeOrderFromJson(json);
+  Map<String, dynamic> toJson() => _$CoffeeOrderToJson(this);
 
   double get totalCost =>
-      items.map((e) => e.cost).reduce((value, element) => value+=element);
+      items.map((e) => e.cost ?? 0).reduce((value, element) => value+=element);
 }
 
 @JsonSerializable()
@@ -26,9 +26,9 @@ class OrderItem {
       : id = id ?? const Uuid().v4();
 
   String id;
-  String name;
-  double cost;
-  String memberId;
+  String? name;
+  double? cost;
+  String? memberId;
 
   factory OrderItem.fromJson(Map<String, dynamic> json) =>
       _$OrderItemFromJson(json);

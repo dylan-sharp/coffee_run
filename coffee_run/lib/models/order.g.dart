@@ -6,7 +6,7 @@ part of 'order.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-OrderRun _$OrderRunFromJson(Map<String, dynamic> json) => OrderRun(
+CoffeeOrder _$CoffeeOrderFromJson(Map<String, dynamic> json) => CoffeeOrder(
       json['payerId'] as String,
       DateTime.parse(json['orderTime'] as String),
       (json['items'] as List<dynamic>)
@@ -15,17 +15,18 @@ OrderRun _$OrderRunFromJson(Map<String, dynamic> json) => OrderRun(
       id: json['id'] as String?,
     );
 
-Map<String, dynamic> _$OrderRunToJson(OrderRun instance) => <String, dynamic>{
+Map<String, dynamic> _$CoffeeOrderToJson(CoffeeOrder instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'payerId': instance.payerId,
       'orderTime': instance.orderTime.toIso8601String(),
-      'items': instance.items,
+      'items': instance.items.map((e) => e.toJson()).toList(),
     };
 
 OrderItem _$OrderItemFromJson(Map<String, dynamic> json) => OrderItem(
-      json['name'] as String,
-      (json['cost'] as num).toDouble(),
-      json['memberId'] as String,
+      json['name'] as String?,
+      (json['cost'] as num?)?.toDouble(),
+      json['memberId'] as String?,
       id: json['id'] as String?,
     );
 
