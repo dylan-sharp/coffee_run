@@ -44,7 +44,7 @@ Future<void> main() async {
 
   // Startup our FirestoreService
   final firebaseAuth = FirebaseAuth.instance;
-  await firebaseAuth.signInAnonymously();
+  firebaseAuth.signInAnonymously();
   final firestoreService = FirestoreService(FirebaseFirestore.instance, firebaseAuth);
 
   // Disable orientation rotation
