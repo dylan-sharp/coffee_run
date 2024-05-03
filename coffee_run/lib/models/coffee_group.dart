@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:uuid/uuid.dart';
@@ -18,35 +20,42 @@ class CoffeeGroup {
 
   factory CoffeeGroup.fromJson(Map<String, dynamic> json) =>
       _$CoffeeGroupFromJson(json);
+
   Map<String, dynamic> toJson() => _$CoffeeGroupToJson(this);
 
   // Determent the next member to pay by returning
   // the individual with the highest debt owed to the group
   String? determineNextPayerId() {
-    String? nextMemberId;
-    double highestDebt = double.negativeInfinity;
+    // Sort coffee members by highest debt
+    // Break ties by sorting id
+    // Below is inefficient for only finding the next member
+    // But this aligns with the member_search screen for now.
+    var coffeeMembers = members.entries.toList();
+    coffeeMembers.sort((a, b) {
+      int debtCompare = b.value.debt.compareTo(a.value.debt);
+      if (debtCompare != 0) return debtCompare;
 
-    members.forEach((key, value) {
-      if (value.debt > highestDebt) {
-        nextMemberId = key;
-        highestDebt = value.debt;
-      }
+      return b.key.compareTo(a.key);
     });
 
-    return nextMemberId;
+    if (coffeeMembers.isNotEmpty) {
+      return coffeeMembers[0].key;
+    }
+
+    return null;
   }
 
   // helping function for returning a member's avatarId
   String? getMemberAvatarId(String memberId) {
-    if(members.containsKey(memberId)) return members[memberId]?.avatarId;
+    if (members.containsKey(memberId)) return members[memberId]?.avatarId;
     return null;
   }
-
 }
 
 @JsonSerializable()
 class CoffeeGroupMember extends Equatable {
-  const CoffeeGroupMember(this.name, this.avatarId, [this.debt = 0, this.drinks = 0]);
+  const CoffeeGroupMember(this.name, this.avatarId,
+      [this.debt = 0, this.drinks = 0]);
 
   final String name;
   final String avatarId;
@@ -55,6 +64,7 @@ class CoffeeGroupMember extends Equatable {
 
   factory CoffeeGroupMember.fromJson(Map<String, dynamic> json) =>
       _$CoffeeGroupMemberFromJson(json);
+
   Map<String, dynamic> toJson() => _$CoffeeGroupMemberToJson(this);
 
   @override

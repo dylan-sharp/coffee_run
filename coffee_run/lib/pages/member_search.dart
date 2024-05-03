@@ -33,9 +33,17 @@ class MemberSearch extends StatelessWidget {
           const SizedBox(height: 8,),
           Expanded(
             child: Consumer<AppViewModel>(builder: (context, app, child) {
+
+              // Sort coffee members by highest debt
+              // Break ties by sorting id
               var coffeeMembers =
                   app.coffeeGroup?.members.entries.toList() ?? [];
-              coffeeMembers.sort((a,b) => b.value.debt.compareTo(a.value.debt));
+              coffeeMembers.sort((a,b) {
+                int debtCompare = b.value.debt.compareTo(a.value.debt);
+                if (debtCompare != 0) return debtCompare;
+
+                return b.key.compareTo(a.key);
+              });
 
               return Scrollbar(
                 child: ListView.builder(
