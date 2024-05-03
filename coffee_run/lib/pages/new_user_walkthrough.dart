@@ -117,14 +117,10 @@ class _NewUserOnboardingState extends State<NewUserOnboarding> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar(context),
-      body: Stack(
-        children: [
-          PageView(
-            controller: pageController,
-            physics: const NeverScrollableScrollPhysics(),
-            children: [buildNamePage(context), buildAvatarPage(context)],
-          )
-        ],
+      body: PageView(
+        controller: pageController,
+        physics: const NeverScrollableScrollPhysics(),
+        children: [buildNamePage(context), buildAvatarPage(context)],
       ),
     );
   }
@@ -225,6 +221,7 @@ class _NewUserOnboardingState extends State<NewUserOnboarding> {
                 crossAxisCount: 2,
                 mainAxisSpacing: 8,
                 crossAxisSpacing: 8,
+                childAspectRatio: 2,
                 shrinkWrap: true,
                 children: List.generate(
                   4,
@@ -271,10 +268,10 @@ class _NewUserOnboardingState extends State<NewUserOnboarding> {
                               width: 25,
                               child: CircularProgressIndicator(
                                 strokeWidth: 2,
-                              ))
-                          : const Text('Create Account'))
+                              ),)
+                          : const Text('Create Account'),)
                 ],
-              )
+              ),
             ],
           ),
         ),
