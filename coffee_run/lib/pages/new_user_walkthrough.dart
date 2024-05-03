@@ -21,8 +21,11 @@ class NewUserWrapper extends StatelessWidget {
       builder: (context, userStatus, consumerChild) {
         // While the userprofile is loading, display loading circle
         if (userStatus == UserStatus.loading) {
-          return const Center(
-            child: CircularProgressIndicator(),
+          return Scaffold(
+            appBar: buildAppBar(context),
+            body:  const Center(
+              child: CircularProgressIndicator(),
+            ),
           );
         }
 
