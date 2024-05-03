@@ -2,25 +2,25 @@
 
 ## Overview
 
-Coffee Run is a simple mobile applciation that helps keep track of coworkers or individuals who go on coffee runs frequently. More specifically Coffee Run is aimed to help keep track of who's turn it is to pay for coffee within a group. To calculate who pays next, it chooses the member who is in the most debt to the group.
+Coffee Run is a simple mobile application that helps keep track of coworkers or individuals who go on coffee runs frequently. More specifically Coffee Run is aimed to help keep track of who's turn it is to pay for coffee within a group. To calculate who pays next, it chooses the member who is in the most debt to the group.
 
 For **best** experience use this application on a **mobile device. I recommend downloading it as a PWA for a more native experience ([Instructions](https://mobilesyrup.com/2020/05/24/how-install-progressive-web-app-pwa-android-ios-pc-mac/)).**
 
 ## Features
 
-- Cross platform building for iOS, Android, and Web
+- Cross-platform building for iOS, Android, and Web
 - Web PWA (Progressive Web App)
 - Onboarding new user flow
 - Create new coffee orders
 - View who's next to pay
 - View past coffee orders
-- View "brewmates" (coffee roomates or rather members) sorted by who pays next
-- Fun random avatar's
+- View "brewmates" (coffee roommates or rather members) sorted by who pays next
+- Fun random avatars
 - Realtime syncing between members
 
 Work in progress features:
 
-- Itegrating a ML model for parsing receipts into structured data to improve UX during order entry. See (`python/receipt_model.ipynb`)
+- Integrating a ML model for parsing receipts into structured data to improve UX during order entry. See (`python/receipt_model.ipynb`)
 
 <div style="text-align: center;">
   <img src="image/README/1714704973141.png" width="200" alt="App Screenshot">
@@ -30,25 +30,25 @@ For images of the full app: [APP_IMAGES.md](/APP_IMAGES.md)
 
 ## Assumptions
 
-- Mobile first user experience
+- Mobile-first user experience
 - Users go out for coffee vs ordering for delivery (see roadmap for ordering feature set)
 
 ## Technical Details
 
-I chose to build this project in Flutter because of the underlying assumption that the core user would prefer a mobile application. Flutter is perfect for this as it can build to multiple platforms from a single code base. The project utilizes Firebase as a backend, utilizing Firestore and Firebase Authentication.
+I chose to build this project in Flutter because of the underlying assumption that the core user would prefer a mobile application. Flutter is perfect for this as it can build multiple platforms from a single code base. The project utilizes Firebase as a backend, utilizing Firestore and Firebase Authentication.
 
 ### Folder Structure Overview
 
 - `coffee_run` - Root of Flutter Project
   - `lib` - Core dart files
     - `models` - Firestore models with serialization and deserialization logic provided by `json_serializable`
-    - `pages` - Core pages of application. Includes full screen dialogs
+    - `pages` - Core pages of the application. Includes full-screen dialogs
     - `view_models` - View models for the application
   - `test` - Contains small unit test coverage
   - `firebase_emulators` - Firebase emulator data checkpoint. Can import from here when starting emulators
 - `python`
-  - `receipt_model.ipynb` - Python notebook showing a simple example on how we could integrate machine learning into the backend to enance the application experience by parsing structured data from reciept images
-  - `base_implementation.ipynb` - Base implemenation of the "Highest-Debt" payment picker.
+  - `receipt_model.ipynb` - Python notebook showing a simple example of how we could integrate machine learning into the backend to enhance the application experience by parsing structured data from receipt images
+  - `base_implementation.ipynb` - Base implementation of the "Highest-Debt" payment picker.
 
 ### Models
 
@@ -58,7 +58,7 @@ I chose to build this project in Flutter because of the underlying assumption th
 
 ### Prerequisites
 
-**NOTE:** Please reach out to me personally before attempting to run. You will need api keys filled out in `firebase_options.dart` along with secret files for iOS and android in order to run.
+**NOTE:** Please reach out to me personally before attempting to run. You will need api keys filled out in `firebase_options.dart` along with secret files for iOS and android to run. Minor additional work is needed if you wish to set up your own firebase project.
 
 #### Required
 
@@ -122,5 +122,5 @@ In no specific order.
   - Edit name, avatar, email, password, etc.
 - Settle up debt
   - Allow users to pay back debt
-  - Optionally: simplify debt pay back (i.e. https://medium.com/@mithunmk93/algorithm-behind-splitwises-debt-simplification-feature-8ac485e97688)
-- Expand testing coverage of application
+  - Optionally: simplify debt payback (i.e. https://medium.com/@mithunmk93/algorithm-behind-splitwises-debt-simplification-feature-8ac485e97688)
+- Expand testing coverage of the application
