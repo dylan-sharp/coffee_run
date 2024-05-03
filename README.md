@@ -28,7 +28,7 @@ For **best** experience use this application on a **mobile device.** I recommend
 
 Work in progress features:
 
-- Integrating a ML model for parsing receipts into structured data to improve UX during order entry. See ([python/receipt_model.ipynb](/python/receipt_model.ipynb))
+- Integrating an ML model for parsing receipts into structured data to improve UX during order entry. See ([python/receipt_model.ipynb](/python/receipt_model.ipynb))
 
 ## Assumptions
 
@@ -54,7 +54,11 @@ I chose to build this project in Flutter because of the underlying assumption th
 
 ### Models
 
-`json_serializable` is used to help construct `toJson()` and `fromJson()` methods for our firestore models. This cod is generated into a .g.dart file. To generate these files run `dart run build_runner build`
+`json_serializable` is used to help construct `toJson()` and `fromJson()` methods for our firestore models. This code is generated into a .g.dart file. To generate these files run `dart run build_runner build`
+
+### Firebase
+
+Firebase is used to provide easily scalable backends for Authentication, Database, and Hosting.
 
 ## Developer Setup
 
@@ -114,7 +118,7 @@ In no specific order.
   - Implement additional account providers via Firebase Auth
 - Improve UI/UX
   - Improve design system and branding
-  - Implement more micro interations
+  - Implement more micro interactions
 - Coffee Stats
   - Display coffee statistics on home page
     - i.e. drink diversity
