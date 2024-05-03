@@ -1,5 +1,12 @@
 # Coffee Run
 
+<div style="text-align: center;">
+  <img src="image/README/1714704973141.png" width="200" alt="App Screenshot">
+</div>
+
+For images of the full app: [APP_IMAGES.md](/APP_IMAGES.md)
+
+
 ## Overview
 
 Coffee Run is a simple mobile application that helps keep track of coworkers or individuals who go on coffee runs frequently. More specifically Coffee Run is aimed to help keep track of who's turn it is to pay for coffee within a group. To calculate who pays next, it chooses the member who is in the most debt to the group.
@@ -23,12 +30,6 @@ For **best** experience use this application on a **mobile device.** I recommend
 Work in progress features:
 
 - Integrating a ML model for parsing receipts into structured data to improve UX during order entry. See (`python/receipt_model.ipynb`)
-
-<div style="text-align: center;">
-  <img src="image/README/1714704973141.png" width="200" alt="App Screenshot">
-</div>
-
-For images of the full app: [APP_IMAGES.md](/APP_IMAGES.md)
 
 ## Assumptions
 
