@@ -4,7 +4,7 @@
 
 Coffee Run is a simple mobile application that helps keep track of coworkers or individuals who go on coffee runs frequently. More specifically Coffee Run is aimed to help keep track of who's turn it is to pay for coffee within a group. To calculate who pays next, it chooses the member who is in the most debt to the group.
 
-For **best** experience use this application on a **mobile device. I recommend downloading it as a PWA for a more native experience ([Instructions](https://mobilesyrup.com/2020/05/24/how-install-progressive-web-app-pwa-android-ios-pc-mac/)).**
+For **best** experience use this application on a **mobile device.** I recommend downloading it as a PWA for a more native experience ([Instructions](https://mobilesyrup.com/2020/05/24/how-install-progressive-web-app-pwa-android-ios-pc-mac/)).
 
 ## Features
 
@@ -14,6 +14,8 @@ For **best** experience use this application on a **mobile device. I recommend d
 - Create new coffee orders
 - View who's next to pay
 - View past coffee orders
+- Start a new order from a previous order
+- Input validation
 - View "brewmates" (coffee roommates or rather members) sorted by who pays next
 - Fun random avatars
 - Realtime syncing between members
