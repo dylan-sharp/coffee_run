@@ -62,6 +62,10 @@ I chose to build this project in Flutter because of the underlying assumption th
 
 Firebase is used to provide easily scalable backends for Authentication, Database, and Hosting.
 
+### Web Renderer
+
+This project is set up to use CanvasKit for rendering its web build (as opposed to regular HTML & CSS).  CanvasKit uses WebGL to render Skia paint commands onto a canvas in the browser.  This does add additional overhead to the payload.  More details here: [Flutter Web Renderers](https://docs.flutter.dev/platform-integration/web/renderers)
+
 ## Developer Setup
 
 ### Prerequisites
