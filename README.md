@@ -12,6 +12,8 @@ Coffee Run is a simple mobile application that helps keep track of coworkers or 
 
 For **best** experience use this application on a **mobile device.** I recommend downloading it as a PWA for a more native experience ([Instructions](https://mobilesyrup.com/2020/05/24/how-install-progressive-web-app-pwa-android-ios-pc-mac/)).
 
+**Demo: ** [https://coffeerun.sharpdylan.com/](https://coffeerun.sharpdylan.com/)
+
 ## Features
 
 - Cross-platform building for iOS, Android, and Web
