@@ -12,6 +12,8 @@ Coffee Run is a simple mobile application that helps keep track of coworkers or 
 
 For **best** experience use this application on a **mobile device.** I recommend downloading it as a PWA for a more native experience ([Instructions](https://mobilesyrup.com/2020/05/24/how-install-progressive-web-app-pwa-android-ios-pc-mac/)).
 
+**Demo:** [https://coffeerun.sharpdylan.com/](https://coffeerun.sharpdylan.com/)
+
 ## Features
 
 - Cross-platform building for iOS, Android, and Web
@@ -28,7 +30,7 @@ For **best** experience use this application on a **mobile device.** I recommend
 
 Work in progress features:
 
-- Integrating a ML model for parsing receipts into structured data to improve UX during order entry. See ([python/receipt_model.ipynb](/python/receipt_model.ipynb))
+- Integrating an ML model for parsing receipts into structured data to improve UX during order entry. See ([python/receipt_model.ipynb](/python/receipt_model.ipynb))
 
 ## Assumptions
 
@@ -54,7 +56,15 @@ I chose to build this project in Flutter because of the underlying assumption th
 
 ### Models
 
-`json_serializable` is used to help construct `toJson()` and `fromJson()` methods for our firestore models. This cod is generated into a .g.dart file. To generate these files run `dart run build_runner build`
+`json_serializable` is used to help construct `toJson()` and `fromJson()` methods for our firestore models. This code is generated into a .g.dart file. To generate these files run `dart run build_runner build`
+
+### Firebase
+
+Firebase is used to provide easily scalable backends for Authentication, Database, and Hosting.
+
+### Web Renderer
+
+This project is set up to use CanvasKit for rendering its web build (as opposed to regular HTML & CSS).  CanvasKit uses WebGL to render Skia paint commands onto a canvas in the browser.  This does add additional overhead to the payload.  More details here: [Flutter Web Renderers](https://docs.flutter.dev/platform-integration/web/renderers)
 
 ## Developer Setup
 
@@ -114,7 +124,7 @@ In no specific order.
   - Implement additional account providers via Firebase Auth
 - Improve UI/UX
   - Improve design system and branding
-  - Implement more micro interations
+  - Implement more micro interactions
 - Coffee Stats
   - Display coffee statistics on home page
     - i.e. drink diversity
