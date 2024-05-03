@@ -117,3 +117,4 @@ In no specific order.
 - Settle up debt
   - Allow users to pay back debt
   - Optionally: simplify debt pay back (i.e. https://medium.com/@mithunmk93/algorithm-behind-splitwises-debt-simplification-feature-8ac485e97688)
+- Expand testing coverage of application
