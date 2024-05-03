@@ -71,6 +71,7 @@ class _NewUserOnboardingState extends State<NewUserOnboarding> {
 
   // Helper function for animation to certain pages
   void animateToPage(int page) {
+    FocusManager.instance.primaryFocus?.unfocus();
     pageController.animateToPage(page,
         duration: const Duration(milliseconds: 500),
         curve: Curves.fastOutSlowIn);
@@ -118,12 +119,15 @@ class _NewUserOnboardingState extends State<NewUserOnboarding> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: buildAppBar(context),
-      body: PageView(
-        controller: pageController,
-        physics: const NeverScrollableScrollPhysics(),
-        children: [buildNamePage(context), buildAvatarPage(context)],
+    return GestureDetector(
+      onTap: () => FocusScope.of(context).unfocus(),
+      child: Scaffold(
+        appBar: buildAppBar(context),
+        body: PageView(
+          controller: pageController,
+          physics: const NeverScrollableScrollPhysics(),
+          children: [buildNamePage(context), buildAvatarPage(context)],
+        ),
       ),
     );
   }
