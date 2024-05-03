@@ -289,6 +289,30 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "7.0.0"
+  firebase_analytics:
+    dependency: "direct main"
+    description:
+      name: firebase_analytics
+      sha256: c56bcc7abc6caacc33e8495bc604a5861d25ce371f1b06476ae226e7cbb21d4c
+      url: "https://pub.dev"
+    source: hosted
+    version: "10.10.4"
+  firebase_analytics_platform_interface:
+    dependency: transitive
+    description:
+      name: firebase_analytics_platform_interface
+      sha256: e8cdb845820eaa5f1d29de31a72aab8addbbffc6483f1e5123a9d0b611735285
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.10.5"
+  firebase_analytics_web:
+    dependency: transitive
+    description:
+      name: firebase_analytics_web
+      sha256: e2fabebdf16bb99506a1e7e84f5effd6313c90678e6ea1876d301f057483a198
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.5.7+4"
   firebase_auth:
     dependency: "direct main"
     description:
@@ -345,6 +369,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.16.0"
+  firebase_crashlytics:
+    dependency: "direct main"
+    description:
+      name: firebase_crashlytics
+      sha256: "1c499d1d97b93d24aee099259f89a5fbd6ce7d11d0fe98824586087f1291931b"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.5.4"
+  firebase_crashlytics_platform_interface:
+    dependency: transitive
+    description:
+      name: firebase_crashlytics_platform_interface
+      sha256: "3160d049c220422f8de34690c39be42af8309a030d9dd370051582272181238e"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.6.32"
   fixnum:
     dependency: transitive
     description:
