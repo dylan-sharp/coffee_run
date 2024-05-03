@@ -22,6 +22,12 @@ Work in progress features:
 
 - Itegrating a ML model for parsing receipts into structured data to improve UX during order entry. See (`python/receipt_model.ipynb`)
 
+<div style="text-align: center;">
+  <img src="image/README/1714704973141.png" width="200" alt="App Screenshot">
+</div>
+
+For images of the full app: [APP_IMAGES.md](/APP_IMAGES.md)
+
 ## Assumptions
 
 - Mobile first user experience
@@ -68,7 +74,7 @@ I chose to build this project in Flutter because of the underlying assumption th
 - MacOS w/ Xcode (required for building iOS app)
 - Chrome (required for doing web development )
 
-### Steps to run locally
+### Steps to run in debug locally
 
 1. Clone this repository
 
