@@ -25,6 +25,7 @@ Future<void> main() async {
   // Enable firebase emulators in debug mode
   if (kDebugMode) {
     try {
+      // Change to your local ip address here if connecting from physical device
       FirebaseFirestore.instance.useFirestoreEmulator('localhost', 8080);
       await FirebaseAuth.instance.useAuthEmulator('localhost', 9099);
     } catch (e) {

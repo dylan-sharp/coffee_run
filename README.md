@@ -85,7 +85,7 @@ I chose to build this project in Flutter because of the underlying assumption th
 3. Start flutter emulators
 
    ```
-   firebase emulators:start --import firebase_emulators
+   firebase emulators:start --import firebase_emulators --only firestore,auth
    ```
 
 4. In a new terminal navigate back to the flutter root and start flutter web in debug
