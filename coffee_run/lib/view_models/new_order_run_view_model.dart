@@ -70,7 +70,10 @@ class NewOrderViewModel extends ChangeNotifier {
 
   // Take a previous order and populate this order with it.
   void populateFromPrevOrder(CoffeeOrder order) {
-    orderItems = order.items;
+    // Perform a deep copy of order items
+    orderItems = List.of(order.items)
+        .map((e) => OrderItem(e.name, e.cost, e.memberId, id: e.id))
+        .toList();
     memberIdValidations = List.generate(order.items.length, (index) => true);
     notifyListeners();
   }
